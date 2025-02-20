@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dayvjmbn0liho"]
+
+[ext_resource type="Script" path="res://scripts/managers/game_manager.gd" id="1_a5rab"]
+[ext_resource type="Texture2D" uid="uid://cwd24nm2h4tai" path="res://sprites/placeholder/blank.png" id="2_2urrs"]
+[ext_resource type="PackedScene" uid="uid://dnmlmf5cgeoqv" path="res://scenes/areas/bug_pile.tscn" id="3_lchj0"]
+[ext_resource type="PackedScene" uid="uid://kw3yswyx5txj" path="res://scenes/characters/player.tscn" id="4_0piad"]
+
+[node name="game_manager" type="Node2D"]
+script = ExtResource("1_a5rab")
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="background" type="Sprite2D" parent="background"]
+scale = Vector2(200, 200)
+texture = ExtResource("2_2urrs")
+
+[node name="midground" type="Node2D" parent="."]
+
+[node name="bug_piles" type="Node2D" parent="midground"]
+
+[node name="bug_pile" parent="midground/bug_piles" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
+position = Vector2(-230, -123)
+game_manager = NodePath("../../..")
+
+[node name="bug_pile2" parent="midground/bug_piles" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
+position = Vector2(286, 64)
+game_manager = NodePath("../../..")
+
+[node name="bug_pile3" parent="midground/bug_piles" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
+position = Vector2(-238, 222)
+game_manager = NodePath("../../..")
+
+[node name="player" parent="midground" instance=ExtResource("4_0piad")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Camera2D" type="Camera2D" parent="midground/player"]
+
+[node name="foreground" type="Node2D" parent="."]
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

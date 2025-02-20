@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnmlmf5cgeoqv"]
+
+[ext_resource type="Texture2D" uid="uid://cwd24nm2h4tai" path="res://sprites/placeholder/blank.png" id="1_flvgf"]
+[ext_resource type="Script" path="res://scripts/characters/bug.gd" id="1_p28bg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uvy0"]
+radius = 12.1655
+
+[node name="bug_pile" type="Area2D" node_paths=PackedStringArray("game_manager")]
+script = ExtResource("1_p28bg")
+game_manager = NodePath("")
+
+[node name="Blank" type="Sprite2D" parent="."]
+modulate = Color(1, 0.572549, 0.67451, 1)
+texture = ExtResource("1_flvgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4uvy0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
