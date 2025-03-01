@@ -1,7 +1,9 @@
 extends CharacterBody2D
 class_name Player
-
-const SPEED = 300.0
+# refs
+@export var game_manager : GameManager
+# physics
+var SPEED : int = 500
 
 
 func _physics_process(delta: float) -> void:
@@ -15,4 +17,7 @@ func movement():
 		velocity = input * SPEED
 	else:
 		velocity = Vector2.ZERO
+	# increase speed
+	if game_manager.bugs_left == game_manager.bugs.size()/2:
+		SPEED = 700
 	
