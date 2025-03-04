@@ -10,7 +10,7 @@ radius = 16.0312
 script = ExtResource("1_p28bg")
 
 [node name="Blank" type="Sprite2D" parent="."]
-modulate = Color(0.987319, 0.000166147, 0.459898, 1)
+modulate = Color(0.839216, 1, 0.12549, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("1_flvgf")
 

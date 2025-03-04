@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://s5dfky5lgrgk"]
+
+[ext_resource type="Texture2D" uid="uid://jcvok36dkehw" path="res://sprites/ui/ui_pure_mania.png" id="1_gpcf1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvl17"]
+atlas = ExtResource("1_gpcf1")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4q56"]
+atlas = ExtResource("1_gpcf1")
+region = Rect2(400, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elp2s"]
+atlas = ExtResource("1_gpcf1")
+region = Rect2(800, 0, 400, 300)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvl17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4q56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elp2s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]

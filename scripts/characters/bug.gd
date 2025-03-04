@@ -3,12 +3,10 @@ class_name Bug
 # refs
 @export var game_manager : GameManager
 # physics
-var new_pos = Vector2(randf_range(-1500, 1500), randf_range(-1500, 1500))
 
 
 func _ready() -> void:
-	# position randomizer
-	global_position = new_pos
+	pass
 	
 
 func _process(delta: float) -> void:
@@ -16,6 +14,10 @@ func _process(delta: float) -> void:
 	
 	
 func _physics_process(delta: float) -> void:
+	movement()
+	
+	
+func movement():
 	pass
 	
 	

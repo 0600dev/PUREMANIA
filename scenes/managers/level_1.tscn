@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dayvjmbn0liho"]
+[gd_scene load_steps=14 format=3 uid="uid://dayvjmbn0liho"]
 
 [ext_resource type="Script" path="res://scripts/managers/game_manager.gd" id="1_itimo"]
 [ext_resource type="Texture2D" uid="uid://csqxyifhopy8h" path="res://sprites/placeholder/icon.svg" id="2_7t21c"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://kw3yswyx5txj" path="res://scenes/characters/player.tscn" id="4_aw1gt"]
 [ext_resource type="PackedScene" uid="uid://cqbet7nuj2k0k" path="res://scenes/areas/parasite.tscn" id="5_jkv5q"]
 [ext_resource type="Theme" uid="uid://d4cm2tpenei3l" path="res://style/main_theme.tres" id="6_aa2sq"]
+[ext_resource type="Material" uid="uid://bm6o4ow82dfcb" path="res://style/shaders/seeing_red_material.tres" id="6_jrpm3"]
+[ext_resource type="SpriteFrames" uid="uid://s5dfky5lgrgk" path="res://animation/ui_frame.tres" id="7_bf1cf"]
+[ext_resource type="Texture2D" uid="uid://cde7e0lp2npoj" path="res://sprites/ui/health_bar.png" id="7_i72vx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi5f3"]
 
@@ -112,34 +115,51 @@ autostart = true
 
 [node name="ui" type="CanvasGroup" parent="."]
 
-[node name="score_label" type="CanvasLayer" parent="ui"]
+[node name="shaders" type="CanvasLayer" parent="ui"]
 
-[node name="score_label" type="Label" parent="ui/score_label"]
+[node name="seeing_red" type="TextureRect" parent="ui/shaders"]
+material = ExtResource("6_jrpm3")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="health_bar" type="CanvasLayer" parent="ui"]
+
+[node name="health_bar" type="TextureProgressBar" parent="ui/health_bar"]
 offset_left = 9.0
-offset_top = 7.0
-offset_right = 9.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("6_aa2sq")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+offset_top = 161.81
+offset_right = 51.0
+offset_bottom = 239.81
+rotation = -1.5708
+scale = Vector2(3.48, 1)
+value = 100.0
+texture_progress = ExtResource("7_i72vx")
 
-[node name="bugs_left_label" type="Label" parent="ui/score_label"]
-anchors_preset = 15
+[node name="ui_frame" type="CanvasLayer" parent="ui"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ui/ui_frame"]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("7_bf1cf")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.557813
+centered = false
+
+[node name="bugs_left" type="CanvasLayer" parent="ui"]
+
+[node name="bugs_left_label" type="Label" parent="ui/bugs_left"]
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 640.0
-offset_top = 8.0
-offset_right = 640.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -96.0
+offset_top = 32.0
+offset_right = -95.0
+offset_bottom = 102.0
+grow_horizontal = 0
 theme = ExtResource("6_aa2sq")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
 
 [connection signal="timeout" from="midground/player/parasite/parasite_timer" to="." method="_on_parasite_timer_timeout"]
