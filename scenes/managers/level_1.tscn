@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dayvjmbn0liho"]
+[gd_scene load_steps=11 format=3 uid="uid://dayvjmbn0liho"]
 
-[ext_resource type="Script" path="res://scripts/managers/game_manager.gd" id="1_a5rab"]
-[ext_resource type="Texture2D" uid="uid://csqxyifhopy8h" path="res://sprites/placeholder/icon.svg" id="2_ip7kn"]
-[ext_resource type="PackedScene" uid="uid://dnmlmf5cgeoqv" path="res://scenes/areas/bug.tscn" id="3_lchj0"]
-[ext_resource type="PackedScene" uid="uid://kw3yswyx5txj" path="res://scenes/characters/player.tscn" id="4_0piad"]
-[ext_resource type="PackedScene" uid="uid://cqbet7nuj2k0k" path="res://scenes/areas/parasite.tscn" id="5_jhyhu"]
+[ext_resource type="Script" path="res://scripts/managers/game_manager.gd" id="1_itimo"]
+[ext_resource type="Texture2D" uid="uid://csqxyifhopy8h" path="res://sprites/placeholder/icon.svg" id="2_7t21c"]
+[ext_resource type="PackedScene" uid="uid://dnmlmf5cgeoqv" path="res://scenes/areas/bug.tscn" id="3_msipt"]
+[ext_resource type="PackedScene" uid="uid://kw3yswyx5txj" path="res://scenes/characters/player.tscn" id="4_aw1gt"]
+[ext_resource type="PackedScene" uid="uid://cqbet7nuj2k0k" path="res://scenes/areas/parasite.tscn" id="5_jkv5q"]
+[ext_resource type="Theme" uid="uid://d4cm2tpenei3l" path="res://style/main_theme.tres" id="6_aa2sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi5f3"]
 
@@ -14,15 +15,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig8yg"]
 
-[node name="game_manager" type="Node2D" node_paths=PackedStringArray("bugs")]
-script = ExtResource("1_a5rab")
-bugs = [NodePath("midground/bugs/bug"), NodePath("midground/bugs/bug_2"), NodePath("midground/bugs/bug_3"), NodePath("midground/bugs/bug_4"), NodePath("midground/bugs/bug_5"), NodePath("midground/bugs/bug_6"), NodePath("midground/bugs/bug_7"), NodePath("midground/bugs/bug_8"), NodePath("midground/bugs/bug_9"), NodePath("midground/bugs/bug_10")]
+[node name="level_1" type="Node2D" node_paths=PackedStringArray("bugs")]
+script = ExtResource("1_itimo")
+bugs = [NodePath("midground/bugs/bug_1"), NodePath("midground/bugs/bug_2"), NodePath("midground/bugs/bug_3"), NodePath("midground/bugs/bug_4"), NodePath("midground/bugs/bug_5"), NodePath("midground/bugs/bug_6"), NodePath("midground/bugs/bug_7"), NodePath("midground/bugs/bug_8"), NodePath("midground/bugs/bug_9"), NodePath("midground/bugs/bug_10")]
 
 [node name="background" type="Node2D" parent="."]
 
 [node name="background" type="Sprite2D" parent="background"]
 scale = Vector2(30, 30)
-texture = ExtResource("2_ip7kn")
+texture = ExtResource("2_7t21c")
 
 [node name="physics_barriers" type="StaticBody2D" parent="background"]
 
@@ -50,47 +51,47 @@ shape = SubResource("RectangleShape2D_ig8yg")
 
 [node name="bugs" type="Node2D" parent="midground"]
 
-[node name="bug" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-230, -123)
+[node name="bug_1" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(-1160, -1192)
 game_manager = NodePath("../../..")
 
-[node name="bug_2" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(286, 64)
+[node name="bug_2" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(1288, -560)
 game_manager = NodePath("../../..")
 
-[node name="bug_3" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-238, 222)
+[node name="bug_3" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(-1000, 976)
 game_manager = NodePath("../../..")
 
-[node name="bug_4" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-230, -123)
+[node name="bug_4" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(960, 544)
 game_manager = NodePath("../../..")
 
-[node name="bug_5" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(286, 64)
+[node name="bug_5" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(192, -664)
 game_manager = NodePath("../../..")
 
-[node name="bug_6" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-238, 222)
+[node name="bug_6" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(-1504, -176)
 game_manager = NodePath("../../..")
 
-[node name="bug_7" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-230, -123)
+[node name="bug_7" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(920, -1512)
 game_manager = NodePath("../../..")
 
-[node name="bug_8" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(286, 64)
+[node name="bug_8" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(1240, 1480)
 game_manager = NodePath("../../..")
 
-[node name="bug_9" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-238, 222)
+[node name="bug_9" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(240, 1544)
 game_manager = NodePath("../../..")
 
-[node name="bug_10" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lchj0")]
-position = Vector2(-238, 222)
+[node name="bug_10" parent="midground/bugs" node_paths=PackedStringArray("game_manager") instance=ExtResource("3_msipt")]
+position = Vector2(-168, 176)
 game_manager = NodePath("../../..")
 
-[node name="player" parent="midground" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_0piad")]
+[node name="player" parent="midground" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_aw1gt")]
 scale = Vector2(0.25, 0.25)
 game_manager = NodePath("../..")
 
@@ -101,7 +102,7 @@ limit_right = 1600
 limit_bottom = 1600
 editor_draw_limits = true
 
-[node name="parasite" parent="midground/player" instance=ExtResource("5_jhyhu")]
+[node name="parasite" parent="midground/player" instance=ExtResource("5_jkv5q")]
 position = Vector2(76, -12)
 
 [node name="parasite_timer" type="Timer" parent="midground/player/parasite"]
@@ -123,6 +124,7 @@ offset_right = 9.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_aa2sq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 
@@ -136,6 +138,7 @@ offset_right = 640.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_aa2sq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 

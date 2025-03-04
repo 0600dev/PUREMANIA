@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="feed"
+config/name="PUREMANIA"
 run/main_scene="res://scenes/menus/start_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://sprites/placeholder/icon.svg"
