@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcvok36dkehw"
-path="res://.godot/imported/ui_pure_mania.png-54d700e9963676e0aff4c6b83a08d0d8.ctex"
+uid="uid://cp23ik6jtmy1o"
+path="res://.godot/imported/ui_frame.png-11760e87e57498b2622c6a9d0ecdd56d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui/ui_pure_mania.png"
-dest_files=["res://.godot/imported/ui_pure_mania.png-54d700e9963676e0aff4c6b83a08d0d8.ctex"]
+source_file="res://sprites/ui/ui_frame.png"
+dest_files=["res://.godot/imported/ui_frame.png-11760e87e57498b2622c6a9d0ecdd56d.ctex"]
 
 [params]
 
