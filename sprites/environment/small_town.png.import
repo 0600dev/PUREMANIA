@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq7eu7k3evstd"
-path="res://.godot/imported/basic_bug.png-175367f95c04f2587019c7c497fea33b.ctex"
+uid="uid://bll4s5i2fes6s"
+path="res://.godot/imported/small_town.png-5eab67a31cc0edbc51f9f3ebda4e6094.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters_creatures/basic_bug.png"
-dest_files=["res://.godot/imported/basic_bug.png-175367f95c04f2587019c7c497fea33b.ctex"]
+source_file="res://sprites/environment/small_town.png"
+dest_files=["res://.godot/imported/small_town.png-5eab67a31cc0edbc51f9f3ebda4e6094.ctex"]
 
 [params]
 

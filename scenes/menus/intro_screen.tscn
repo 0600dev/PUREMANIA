@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwrto0hscejdq"]
+
+[ext_resource type="Script" uid="uid://c01ncgx87bb5" path="res://scripts/menus/intro_screen.gd" id="1_gdwo1"]
+[ext_resource type="Texture2D" uid="uid://cwd24nm2h4tai" path="res://sprites/placeholder/blank.png" id="2_ub7nu"]
+
+[node name="intro_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdwo1")
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(50, 37.5)
+texture = ExtResource("2_ub7nu")
+centered = false

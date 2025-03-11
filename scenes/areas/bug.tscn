@@ -1,22 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnmlmf5cgeoqv"]
 
-[ext_resource type="Script" path="res://scripts/characters/bug.gd" id="1_p28bg"]
+[ext_resource type="Script" uid="uid://dn406ra03dmgg" path="res://scripts/characters/bug.gd" id="1_p28bg"]
 [ext_resource type="SpriteFrames" uid="uid://c2xuw24hmcf5n" path="res://animation/bug_anim.tres" id="2_xt71b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4uvy0"]
-radius = 16.0312
+radius = 32.0
 
 [node name="bug" type="Area2D"]
 script = ExtResource("1_p28bg")
 
-[node name="Blank" type="AnimatedSprite2D" parent="."]
+[node name="bug_animated_sprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.0895316, 0.243414, 1)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_xt71b")
 animation = &"twitch"
 autoplay = "twitch"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="squash_zone" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4uvy0")
+
+[node name="bug_killed_timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

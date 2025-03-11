@@ -4,7 +4,7 @@ class_name Player
 @export var game_manager : GameManager
 # physics
 var SPEED : int = 500
-
+var pos = self.position
 
 func _physics_process(delta: float) -> void:
 	movement()

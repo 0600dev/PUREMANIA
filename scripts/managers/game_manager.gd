@@ -1,16 +1,14 @@
 extends Node2D
 class_name GameManager
 # refs
-# bugs as a whole
+# bugs
 @export var bugs : Array[Area2D] = []
-
 # score system
-var score : int = 0
-var score_counted : bool = false
 var bugs_left : int = 0
 # ui
 @onready var health_bar: TextureProgressBar = $ui/health_bar/health_bar
 @onready var bugs_left_label: Label = $ui/bugs_left/bugs_left_label
+@onready var red_filter: TextureRect = $ui/shaders/red_filter
 # checks
 
 # timers
@@ -28,7 +26,7 @@ func _process(delta: float) -> void:
 
 	
 func _on_parasite_timer_timeout() -> void:
-	health_bar.value -= 5
+	health_bar.value -= 1
 	
 	
 func bug_controller():
@@ -42,6 +40,7 @@ func score_controller():
 	# game win
 	if bugs_left == bugs.size():
 		get_tree().change_scene_to_file("res://scenes/menus/you_win.tscn")
-	
-	
+	# 
+	if bugs_left == bugs.size()/2:
+		red_filter.visible = true
 	
