@@ -16,7 +16,8 @@ func movement():
 	if input:
 		velocity = input * SPEED
 	else:
-		velocity = Vector2.ZERO
+		velocity.x = move_toward(velocity.x, 0, 20)
+		velocity.y = move_toward(velocity.y, 0, 20)
 	# increase speed
 	if game_manager.bugs_left == game_manager.bugs.size()/2:
 		SPEED = 700
